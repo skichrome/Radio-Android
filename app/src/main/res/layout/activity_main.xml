@@ -12,19 +12,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rtl Sdr App test"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/textView"/>
+            android:id="@+id/textView" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/btnSend"/>
     <Button
-            android:text="Lancer commande de test"
+            android:text="Démarrer le service"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStart"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnStop" app:layout_constraintStart_toStartOf="@+id/btnSend"
+            app:layout_constraintEnd_toEndOf="@+id/btnSend"/>
+    <Button
+            android:text="Envoyer commande de test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnCmd"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+            android:id="@+id/btnSend"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@+id/btnStartListen"/>
+    <Button
+            android:text="Arrëter le service"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStop"
+            android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnStart" app:layout_constraintStart_toStartOf="@+id/btnStart"/>
+    <Button
+            android:text="Lancer l'écoute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStartListen" app:layout_constraintStart_toStartOf="@+id/btnSend"
+            app:layout_constraintEnd_toEndOf="@+id/btnSend" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnStart"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
